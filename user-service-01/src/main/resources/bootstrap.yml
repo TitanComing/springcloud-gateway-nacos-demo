@@ -1,0 +1,16 @@
+server:
+  port: 8207
+spring:
+  application:
+    name: user-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: 02e64c70-779e-42af-be85-077075870bb7
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: 02e64c70-779e-42af-be85-077075870bb7
+        group: test_group
+        file-extension: yaml
+
