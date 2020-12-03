@@ -2,6 +2,8 @@ package demo.controller;
 
 import demo.domain.CommonResult;
 import demo.domain.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +16,9 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 @RequestMapping("/user")
 public class UserRibbonController {
+
+    private Logger LOGGER = LoggerFactory.getLogger(this.getClass());
+
     @Autowired
     private RestTemplate restTemplate;
     @Value("${service-url.nacos-user-service}")
@@ -21,6 +26,7 @@ public class UserRibbonController {
 
     @GetMapping("/{id}")
     public CommonResult getUser(@PathVariable Long id) {
+        LOGGER.info("查询用户id为 {} 的用户信息", id);
         return restTemplate.getForObject(userServiceUrl + "/user/{1}", CommonResult.class, id);
     }
 

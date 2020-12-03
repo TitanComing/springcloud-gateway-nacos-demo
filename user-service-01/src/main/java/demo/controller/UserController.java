@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 import demo.service.UserService;
 
@@ -15,12 +16,13 @@ import java.util.List;
  * Create by peng on 2020/12/2.
  */
 @RestController
+@RefreshScope
 @RequestMapping("/user")
 public class UserController {
 
     private Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
-    @Value("user.username")
+    @Value("${user.username}")
     private String username;
 
     @Autowired

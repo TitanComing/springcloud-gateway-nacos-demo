@@ -9,6 +9,7 @@
         <module>ribbon-service</module>
         <module>user-service-01</module>
         <module>user-service-02</module>
+        <module>feign-service</module>
     </modules>
 
     <parent>
@@ -27,7 +28,8 @@
         <spring-boot.version>2.2.11.RELEASE</spring-boot.version>
         <spring-cloud.version>Hoxton.SR4</spring-cloud.version>
         <spring-cloud-gateway.version>2.2.2.RELEASE</spring-cloud-gateway.version>
-        <spring-cloud-alibaba.version>2.2.1.RELEASE</spring-cloud-alibaba.version>
+        <spring-cloud-openfeign.version>2.2.2.RELEASE</spring-cloud-openfeign.version>
+        <spring-cloud-alibaba.version>2.2.3.RELEASE</spring-cloud-alibaba.version>
     </properties>
 
     <dependencies>
@@ -77,6 +79,11 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-gateway</artifactId>
                 <version>${spring-cloud-gateway.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-openfeign</artifactId>
+                <version>${spring-cloud-openfeign.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
