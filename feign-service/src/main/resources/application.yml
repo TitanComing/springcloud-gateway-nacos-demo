@@ -1,0 +1,10 @@
+server:
+  port: 8701
+spring:
+  application:
+    name: feign-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: 02e64c70-779e-42af-be85-077075870bb7
