@@ -13,4 +13,16 @@ spring:
         namespace: 02e64c70-779e-42af-be85-077075870bb7
         group: test_group
         file-extension: yaml
+    sentinel:
+      transport:
+        dashboard: localhost:8080 #配置sentinel dashboard地址
+        port: 8719
+      datasource:
+        ds1:
+          nacos:
+            server-addr: localhost:8848
+            dataId: ${spring.application.name}-sentinel
+            groupId: test_group
+            data-type: json
+            rule-type: flow
 

@@ -1,5 +1,6 @@
 package demo.service.impl;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import demo.domain.User;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -30,6 +31,7 @@ public class UserServiceImpl implements UserService {
         userList.add(user);
     }
 
+    @SentinelResource(value = "getUser")
     @Override
     public User getUser(Long id) {
         List<User> findUserList = userList.stream().filter(userItem -> userItem.getId().equals(id)).collect(Collectors.toList());
